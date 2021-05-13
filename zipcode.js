@@ -10,7 +10,8 @@ function getZipcodeInfo() {
 		$("#errorLog").html("");
 		document.getElementById("zip").value = "";
 		$("#zipcodeTable").append("<tr>" + "<td>" + data.resource[0].zip +"</td><td>" + data.resource[0].city + "<td>" + data.resource[0].state +"</td><td>" + data.resource[0].latitude +
-								  "<td>" + data.resource[0].longitude +"</td><td>" + data.resource[0].timezone + "<td>" + (data.resource[0].daylightSavingsFlag == 1) +"</td><td>" + data.resource[0].geopoint + "</td></tr>");
+								  "<td>" + data.resource[0].longitude +"</td><td>" + data.resource[0].timezone + "<td>" + (data.resource[0].daylightSavingsFlag == 1) +"</td><td>" +
+								   data.resource[0].geopoint + "</td></tr>");
 
 	}).fail(function(xhr, status, error) {
 		document.getElementById("zip").value = "";

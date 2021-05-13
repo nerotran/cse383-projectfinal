@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="history.js?rev=1"></script>
+  <link rel="stylesheet" href="history.css">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
       <a class="navbar-brand" href="index.html">Final Project</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="index.html">Info</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="zipcode.html">Zipcode</a></li>
       <li> <a href="forecast.html">Weather Forecast</a></li>
       <li class="active"><a href="history.html">Forecast History</a></li>
@@ -28,21 +29,29 @@
 <body>
   
   <form name="getDate" onsubmit="getZipcodeInfo(); return false">
-  
-    <label for="dateR">Date Requested:</label>
-    <input type="text" class ="form-control" id="dateR" name="dateR" required>
+    <div class = "container">
+      <div class="row ">
+        <label class="col-sm-2 col-form-label" for="dateR">Date Requested:</label>
+        <div class="col-sm-2">
+           <input type="date" class ="form-control" id="dateR" name="dateR" required>
+        </div>
+      </div>
 
-    <label for="sort">Sort By:</label>
-    <select id="sort" name="sort">
-      <option value="1">Location</option>
-      <option value="2">Date Requested</option>
-    </select>
-    <br>
+      <div class="row">
+        <label class="col-sm-2 col-form-label" for="sort">Sort By:</label>
+        <div class="col-sm-2">
+          <select id="sort" name="sort" Class="form-select">
+          <option value="1">Location</option>
+          <option value="2">Date Requested</option>
+          </select>
+        </div>
+      </div>   
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
-  <div id='time'>
+  <div class="table-responsive-sm" id='time'>
         <table align="center" width="500px" id="historyTable" class = "table">
           <thead><tr><th>Zipcode</th>
                      <th>DateRequested</th>
