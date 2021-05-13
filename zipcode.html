@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="zipcode.js?rev=1"></script>
 </head>
 <body>
 
@@ -16,8 +17,8 @@
       <a class="navbar-brand" href="index.html">Final Project</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Info</a></li>
-      <li><a href="zipcode.html">Zip Code</a></li>
+      <li><a href="index.html">Info</a></li>
+      <li class="active"><a href="zipcode.html">Zip Code</a></li>
       <li><a href="forecast.html">Weather Forecast</a></li>
       <li><a href="history.html">Forecast History</a></li>
     </ul>
@@ -25,11 +26,21 @@
 </nav>
 
 <body>
-  <div>
-    <p>Name: Nero Tran Huu</p>
-    <p>Course: CSE383</p>
-    <P>Instructor: Kurt Johnson<p>
-    <p>Assignment: Final Project</p>
+  
+  <form name="zipGet" onsubmit="getZipcodeInfo(); return false">
+  
+    <label for="zip">Zipcode:</label>
+    <input type="text" class ="form-control" id="zip" name="zip" minlength="5" maxlength="5" required>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div id='time'>
+        <table align="center" width="500px" id="zipcodeTable" class = "table">
+          <thead><tr><th>Zip</th><th>City</th><th>State</th><th>Latitude</th><th>Longitude</th><th>Timezone</th><th>Daylight Savings</th><th>geopoint</th></tr></thead>
+        </table>
   </div>
+
+  <p id="errorLog"></p>
 </body>
 </html>
