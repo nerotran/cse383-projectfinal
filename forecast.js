@@ -43,7 +43,7 @@ function getZipcodeInfo() {
 			//clear out old data
 			$("#forecastTable").html("");
 			$("#forecastTable").append("<thead><tr><th>Zipcode</th><th>DateRequested</th><th>Date</th><th>Low</th><th>High</th><th>Forecast</th><th></th></tr></thead>");
-			len = data2.daily.length;
+			
 			var date = new Date();
 			var current = new Date();
 			var date1 = current.getDate();
@@ -57,7 +57,7 @@ function getZipcodeInfo() {
 
 			currentS = current.getFullYear() + "-" + month + "-" + date1;
 			
-			
+			len = data2.daily.length;
 			for (i=0;i<len;i++) {
 				
 
@@ -73,7 +73,7 @@ function getZipcodeInfo() {
 				}
 
 				var fullDate = date.getFullYear() + "-" + month1 + "-" + date2;
-				$("#forecastTable").append("<tr><td>" + location + "</td><td>" + currentS + "</td><td>" + weekday[date.getDay()] + " " + months[date.getMonth()] + " " + date.getDate() +
+				$("#forecastTable").append("<tr><td>" + location + "</td><td>" + currentS + "</td><td>" + weekday[date.getDay() - 1] + " " + months[date.getMonth()] + " " + date.getDate() +
 				 "</td><td>" + data2.daily[i].temp.min + "</td><td>" + data2.daily[i].temp.max + "</td><td>" + data2.daily[i].weather[0].description + "</td><td>" + img + "</td></tr>");
 				a=$.ajax({
 					url: URL3 + "&Location=" + location + "&Low=" + data2.daily[i].temp.min + "&High=" + data2.daily[i].temp.max + "&Forecast=" + data2.daily[i].weather[0].description + 
